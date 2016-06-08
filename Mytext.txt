@@ -1,0 +1,15 @@
+ The first two of these checks take place primarily during the verification step that occurs when a class is loaded and 
+made eligible for use. The third is primarily performed dynamically, when data items or methods of a class are first 
+accessed by another class. The verifier permits only some bytecode sequences in valid programs,  a jump (branch) 
+instruction can only target an instruction within the same method. Furthermore, the verifier ensures that any given 
+instruction operates on a fixed stack location,[10] allowing the JIT compiler to transform stack accesses into fixed
+ register accesses. Because of this, that the JVM is a stack architecture does not imply a speed penalty for emulation
+ on register-based architectures when using a JIT compiler. In the face of the code-verified JVM architecture, it makes
+ no difference to a JIT compiler whether it gets named imaginary registers or imaginary stack positions that must be
+ allocated to the target architecture's registers. In fact, code verification makes the JVM different from a classic 
+stack architecture, of which efficient emulation with a JIT compiler is more complicated and typically carried out by a 
+slower interpreter. The original specification for the bytecode verifier used natural language that was incomplete or
+ incorrect in some respects. A number of attempts have been made to specify the JVM as a formal system. By doing this,
+ the security of current JVM implementations can more thoroughly be analyzed, and potential security exploits prevented. 
+It will also be possible to optimize the JVM by skipping unnecessary safety checks, if the application being run is proven
+ to be safe.
